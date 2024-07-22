@@ -11,8 +11,11 @@
     height: 100%;
     display: flex;
     justify-content: flex-end;
-    flex-direction: column;
+    align-items: center;
+    flex-direction: column-reverse;
+    max-width: calc(100% - 20px);
     margin: 0 auto;
+    position: relative;
     @include md {
       flex-direction: row;
       max-width: 1200px;
@@ -60,23 +63,56 @@
         margin-bottom: 20px;
 
         @include md {
-          font-size: 180px;
+          font-size: 110px;
         }
-        p {
-          max-width: 300px;
-          font-size: 14px;
-          line-height: 20px;
-          margin-bottom: 20px;
+      }
+      p {
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 20px;
 
-          @include md {
-            max-width: 500px;
-            font-size: 18px;
-            line-height: 24px;
-            margin-bottom: 40px;
-          }
+        @include md {
+          max-width: 500px;
+          font-size: 18px;
+          line-height: 24px;
+          margin-bottom: 40px;
         }
-        .ctas {
-            display: flex;
+      }
+      .ctas {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        .banner-cta {
+          text-transform: uppercase;
+          font-size: 19px;
+          font-weight: 800;
+          border: 2px solid white;
+          padding: 10px 20px;
+          cursor: pointer;
+          border-radius: 20px;
+          transition: background-color 0.6s ease, color 0.6s ease,
+            border-color 0.6s ease;
+
+          &:hover {
+            background-color: white;
+            color: black;
+            
+          }
+
+          &.v2 {
+            background-color: white;
+            color: black;
+              transition: background-color 0.6s ease, color 0.6s ease,
+            border-color 0.6s ease;
+
+            &:hover {
+              background-color: transparent;
+              color: white;
+             
+            }
+          }
         }
       }
     }
