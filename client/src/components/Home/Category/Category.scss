@@ -10,17 +10,17 @@
     .categories {
         display: flex;
         flex-flow: wrap;
-        gap: 10px;
+        gap: 20px;
 
         .category {
             background-color: black;
-            width: calc(50% - 5px);
+            width: calc(50% - 10px);
             cursor: pointer;
             overflow: hidden;
              border-radius: 20px;
 
             @include md {
-                width: calc(25% - 10px);
+                width: calc(25% - 15px);
             }
 
             img {

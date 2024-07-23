@@ -1,6 +1,6 @@
 import "./Category.scss";
 
-import cat1 from "../../../assets/category/cat-1.jpg";
+import cat1 from "../../../assets/category/test.png";
 
 const Category = () => {
   return (
