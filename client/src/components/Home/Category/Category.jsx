@@ -1,6 +1,6 @@
 import "./Category.scss";
 
-import cat1 from "../../../assets/category/test.png";
+import cat1 from "../../../assets/category/1.png";
 
 const Category = () => {
   return (
@@ -8,6 +8,7 @@ const Category = () => {
       <div className="categories">
         <div className="category">
           <img src={cat1} alt="" />
+          <h1>Ear Burds</h1>
         </div>
         <div className="category">
           <img src={cat1} alt="" />
