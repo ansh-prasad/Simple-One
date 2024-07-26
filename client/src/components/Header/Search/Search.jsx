@@ -1,6 +1,8 @@
 import "./Search.scss";
 const Search = () => {
-    return <div>Search</div>;
+    return <div className="search-modal">
+        
+    </div>
 };
 
 export default Search;
