@@ -13,8 +13,8 @@ import "./Header.scss";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [shoeCart, setShowCart] = useState(false);
-  const [showSearch, setshowSearch] = useState(false);
+  const [showCart, setShowCart] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   const handleScroll = () => {
     const offset = window.scrollY;
@@ -41,7 +41,7 @@ const Header = () => {
           </ul>
 
           <div className="right">
-            <TbSearch onClick={() => setshowSearch(true)}  />
+            <TbSearch onClick={() => setShowSearch(true)} />
             <AiOutlineHeart />
 
             <span className="cart-icon" onClick={() => setShowCart(true)}>
@@ -52,8 +52,8 @@ const Header = () => {
         </div>
       </header>
 
-      {shoeCart && <Cart setShowCart={setShowCart} />}
-      {showSearch && <Search setshowSearch={setshowSearch} />}
+      {showCart && <Cart setShowCart={setShowCart} />}
+      {showSearch && <Search setShowSearch={setShowSearch} />}
     </>
   );
 };

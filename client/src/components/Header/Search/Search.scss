@@ -1,1 +1,144 @@
 @import "../../../css-config/mixins.scss";
+
+.search-modal {
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background: #111111f7;
+  animation: slideSearchWindowOpen 0.6s ease forwards;
+
+  &.closing {
+    animation: slideSearchWindowClose 0.6s ease forwards;
+  }
+
+  .form-fiels {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 50px;
+    position: relative;
+    @include md {
+      padding: 20px 0;
+    }
+
+    input {
+      background-color: #424242;
+      width: 70%;
+      max-width: 1200px;
+      height: 40px;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgb(206, 206, 206);
+      outline: none;
+      border: none;
+      border-radius: 50px;
+      text-transform: uppercase;
+
+      @include md {
+        width: 30%;
+        font-size: 20px;
+        height: 50px;
+      }
+    }
+    svg {
+      position: absolute;
+      margin-top: 10px;
+      font-size: 15px;
+      right: 40px;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+
+      @include md {
+        right: 70px;
+        font-size: 40px;
+      }
+    }
+  }
+  .search-result-content {
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+
+    @include md {
+      max-width: 800px;
+    }
+    .search-results {
+      height: calc(100vh - 110px);
+      overflow: auto;
+      margin: 20px 0;
+      @include md {
+        height: calc(100vh - 160px);
+      }
+      .search-result-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(228, 228, 228, 0.59);
+        cursor: pointer;
+
+        .img-container {
+          background-color: #616161;
+          width: 90px;
+          height: 90px;
+          flex-shrink: 0;
+          border-radius: 10px;
+
+          img {
+            width: 100%;
+            width: 100%;
+          }
+        }
+        .prod-details {
+          overflow: hidden;
+          position: relative;
+
+          .name {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: block;
+          }
+          .desc{
+            font-size: 14px;
+            line-height: 1;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            color: rgba(255, 255, 255, 0.669);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideSearchWindowOpen {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideSearchWindowClose {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
